@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav/navbar.html' %}
+    <h1>Informació del professorat amb l'id: {{ teacherInfo.id }}</h1>
+    <ul>
+        <li><strong>ID:</strong> {{ teacherInfo.id }}</li>
+        <li><strong>Nom:</strong> {{ teacherInfo.nom }}</li>
+        <li><strong>Cognom:</strong> {{ teacherInfo.cognom }}</li>
+        <li><strong>Edat:</strong> {{ teacherInfo.edat }}</li>
+        <li><strong>Rol:</strong> {{ teacherInfo.rol }}</li>
+        <li><strong>Curs:</strong> {{ teacherInfo.curs }}</li>
+    </ul>
+    <a href="{% url 'teachers' %}"> Torna </a>
+</body>
+</html>

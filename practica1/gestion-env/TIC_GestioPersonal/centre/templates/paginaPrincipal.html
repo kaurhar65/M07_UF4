@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav/navbar.html' %}
+    <a href="{% url 'teachers' %}"> PROFESSORAT</a>
+    <br>
+    <a href="{% url 'students' %}"> ALUMNAT</a>
+    <h1>INFORMACIÓ PROFESSORAT TIC BCN (Pàgina principal)</h1>    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOM</th>
+                <th>COGNOM</th>
+                <th>EDAT</th>
+                <th>ROL</th>
+                <th>CURS</th>
+            </tr>           
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{teacher.id}}</td>
+                <td>{{teacher.nom}}</td>
+                <td>{{teacher.cognom}}</td>
+                <td>{{teacher.edat}}</td>
+                <td>{{teacher.rol}}</td>
+                <td>{{teacher.curs}}</td>
+                <td><a href="{% url 'teacher' teacher.id %}"> +Info </a></td>
+                
+            </tr>
+            {% endfor %}
+</body>
+</html>
