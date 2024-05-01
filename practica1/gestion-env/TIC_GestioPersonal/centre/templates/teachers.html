@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teachers information</title>
-</head>
-<body>
-    {% include 'nav/navbar.html' %}
+{% extends 'index.html' %}
+{% block content %}
     <h1>INFORMACIÓ PROFESSORAT TIC BCN</h1>    
     <table>
         <thead>
@@ -33,5 +26,4 @@
         </tbody>
     </table>
     <a href="{% url 'principal' %}"> Torna </a>
-</body>
-</html>
+{% endblock %}

@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'TIC_GestioPersonal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gestioItic',
+        'USER': 'user_postgres',
+        'PASSWORD': 'pass_postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

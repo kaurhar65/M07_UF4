@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% include 'nav/navbar.html' %}
+{% extends 'index.html' %}
+{% block content %}
     <h1>Informació del professorat amb l'id: {{ teacherInfo.id }}</h1>
     <ul>
         <li><strong>ID:</strong> {{ teacherInfo.id }}</li>
@@ -19,5 +12,4 @@
     <a href="{% url 'teachers' %}"> Torna </a>
     <br>
     <a href="{% url 'principal' %}"> Pàgina Principal</a>
-</body>
-</html>
+{% endblock %}
