@@ -1,0 +1,31 @@
+<!-- template para que salga la lista de todos los usuarios. -->
+
+{% extends 'index.html' %}
+{% block content %}
+<h1>Es mostra l'informació de tots els usuaris</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOM</th>
+            <th>COGNOM</th>
+            <th>ASSIGANTURES</th>
+            <th>ROL</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in usuaris %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.nom }}</td>
+            <td>{{ user.cognom }}</td>
+            <td>{{ user.assignatures }}</td>
+            <td>{{ user.rol }}</td>
+            <td><a href="{% url 'update' user.id%}"> Editar </a></td>
+            <td><a href="{% url 'delete' user.id%}"> Delete </a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

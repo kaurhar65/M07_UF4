@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .form import PersonaFrom
+from django.shortcuts import render, redirect
+from .models import Usuari
 
 teachersList = [
     {"id":1,
@@ -66,3 +69,39 @@ def infoTeacher(request, id):
 
 def infoPaginaPrincipal(request):
     return render(request, 'paginaPrincipal.html', {"teachers": teachersList})
+
+def user_form(request):
+    form = PersonaFrom(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect('principal')
+    context = {'form':form}
+    return render(request, 'form.html', context)
+
+# View all users
+def index(request):
+    allUsuers = Usuari.objects.all()
+    context = {'usuaris': allUsuers}
+    return render(request, 'users.html', context)
+
+# update
+def updateUser(request, pk):
+    user = Usuari.objects.get(id=pk)
+    form = PersonaFrom(instance=user)
+    if request.method == 'POST':
+        form = PersonaFrom(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('principal')
+    else:
+        context = {'form': form}
+        return render(request, 'form.html', context)
+    
+# delete
+
+def deleteUser(request, pk):
+    user = Usuari.objects.get(id=pk)
+    if request.method == 'POST':
+        user.delete()
+        return redirect('principal')
+    return render(request, 'delete_object.html', {'usuari': user})
