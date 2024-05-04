@@ -29,3 +29,44 @@
 - Vista professorat amb més informació passant l'id
 ![Llsita Professorat](/imgPractica1/ex2TeacherInfo.jpg)
 
+# Pràctica 2: CRUD DJango
+### Enllaç video CRUD: [Video](https://drive.google.com/file/d/1FQNaGXCBAS4ffIb_6E6WY7gE4_PRgnmw/view?usp=sharing)
+
+## 1. Base de Dades: Postgres
+- Haureu de crear una bases de dades amb el nom iticBCN
+- Haureu de crear mínim una taula
+    - usuari: id, nom , cognom, assignatures, rol.
+    - En el cas de ser professor haurem de saber les assignatures que està impartint.
+    - Fer servir mínim una taula relacional per gestionar els rols i relacionar-ho amb la taula usuari. (1 punt)
+
+#### Captures de pantalla:
+
+
+## 2. CRUD
+
+#### getAllUsers:
+- Pàgina principal amb tots els usuaris
+![Llsita tots els usuaris](/imgPractica1/allUsers.jpg)
+
+#### getAllStudents:
+- Llista de tots els estudiants
+![Llsita tots els estudiants](/imgPractica1/getStudents.jpg)
+
+#### getAllTeachers:
+- Llista del professorat
+![Llsita del professorats](/imgPractica1/getTeachers.jpg)
+
+#### getUserById:
+- Informació de l'usuari individual
+![+ informació de usuari](/imgPractica1/userById.jpg)
+
+#### update:
+- Formulari per editar un usuari, per defecte surt l'informació
+![Fromulari per editar ](/imgPractica1/editUser.jpg)
+
+#### delete:
+- Vista per eliminar un usuari
+![confirmació ](/imgPractica1/deleteUser.jpg)
+
+
+### Harpreet Kaur

@@ -70,6 +70,7 @@ def infoTeacher(request, id):
 def infoPaginaPrincipal(request):
     return render(request, 'paginaPrincipal.html', {"teachers": teachersList})
 
+# --------------------Views de la práctica de CRUD------------
 def user_form(request):
     form = PersonaFrom(request.POST)
     if form.is_valid():
@@ -78,11 +79,29 @@ def user_form(request):
     context = {'form':form}
     return render(request, 'form.html', context)
 
-# View all users
+#Get all users
 def index(request):
     allUsuers = Usuari.objects.all()
     context = {'usuaris': allUsuers}
     return render(request, 'users.html', context)
+
+#Get all stidents
+def userStudents(request):
+    estudiants = Usuari.objects.filter(rol__rol='estudiant')
+    context = {'estudiants': estudiants}    
+    return render(request, 'students.html', context)
+
+#Get all teachers
+def userTeachers(request):
+    professors = Usuari.objects.filter(rol__rol='professorat')
+    context = {'professors': professors}    
+    return render(request, 'teachers.html', context)
+
+#Get user by id
+def userById(request, pk):
+    user = Usuari.objects.get(id=pk)
+    context = {'user': user}
+    return render(request, 'user.html', context)
 
 # update
 def updateUser(request, pk):
@@ -98,7 +117,6 @@ def updateUser(request, pk):
         return render(request, 'form.html', context)
     
 # delete
-
 def deleteUser(request, pk):
     user = Usuari.objects.get(id=pk)
     if request.method == 'POST':

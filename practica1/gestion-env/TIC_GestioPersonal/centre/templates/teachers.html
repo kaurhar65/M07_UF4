@@ -7,23 +7,21 @@
                 <th>ID</th>
                 <th>NOM</th>
                 <th>COGNOM</th>
-                <th>EDAT</th>
+                <th>ASSIGNATURES</th>
                 <th>ROL</th>
-                <th>CURS</th>
             </tr>           
         </thead>
         <tbody>
-            {% for teacher in teachers %}
+            {% for professor in professors %}
             <tr>
-                <td>{{teacher.id}}</td>
-                <td>{{teacher.nom}}</td>
-                <td>{{teacher.cognom}}</td>
-                <td>{{teacher.edat}}</td>
-                <td>{{teacher.rol}}</td>
-                <td>{{teacher.curs}}</td>
+                <td>{{professor.id}}</td>
+                <td>{{professor.nom}}</td>
+                <td>{{professor.cognom}}</td>
+                <td>{{professor.assignatures}}</td>
+                <td>{{professor.rol}}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{% url 'principal' %}"> Torna </a>
+    <button><a href="{% url 'principal' %}"> Torna </a></button>
 {% endblock %}

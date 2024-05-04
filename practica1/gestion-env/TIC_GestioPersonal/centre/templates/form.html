@@ -1,10 +1,25 @@
 {% block content %}
-<h1>Formulari PROVA </h1>
-
+<style>
+    button,
+    input {
+        background-color: #e3d5ca;
+        border: none;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+</style>
+<h1>Formulari</h1>
 <form action="" method="POST">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit">
+    <button><a href="{% url 'principal' %}">Pàgina Principal</a></button>
 </form>
 
 {% endblock %}

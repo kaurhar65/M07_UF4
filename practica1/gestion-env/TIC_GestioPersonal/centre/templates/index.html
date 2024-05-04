@@ -1,16 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
+    <style>
+        button, input{
+            background-color: #e3d5ca;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .deleteBtn{
+            background-color: #941b0c;
+            font-weight: bold;
+            color: white;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #d5bdaf;
+            padding: 5px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #edede9;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
 </head>
+
 <body>
     {% include 'nav/navbar.html' %}
-    <a href="{% url 'user_form' %}"> Afegir Usuaris</a>
-    <h1>Benvinguts</h1>
+    <p>Llistat de tot el professorat:</p>
+    <a href="{% url 'teachers' %}"> PROFESSORAT</a>
+    <br>
+    <p>Llistat de tots els estudiants:</p>
+    <a href="{% url 'students' %}"> ALUMNAT</a>
     {% block content %}
 
     {% endblock %}
 </body>
+
 </html>

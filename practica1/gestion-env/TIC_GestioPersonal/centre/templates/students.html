@@ -6,18 +6,23 @@
             <tr>
                 <th>ID</th>
                 <th>NOM</th>
+                <th>COGNOM</th>
+                <th>ASSIGNATURES</th>
                 <th>ROL</th>
+
             </tr>
         </thead>
         <tbody>
-            {% for student in students %}
+            {% for estudiant in estudiants %}
             <tr>
-                <td>{{ student.id }}</td>
-                <td>{{ student.nom }}</td>
-                <td>{{ student.rol }}</td>
+                <td>{{ estudiant.id }}</td>
+                <td>{{ estudiant.nom }}</td>
+                <td>{{ estudiant.cognom }}</td>                
+                <td>{{ estudiant.assignatures }}</td>
+                <td>{{ estudiant.rol}}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{% url 'principal' %}"> Torna </a>
+    <button><a href="{% url 'principal' %}"> Torna </a></button>
 {% endblock %}

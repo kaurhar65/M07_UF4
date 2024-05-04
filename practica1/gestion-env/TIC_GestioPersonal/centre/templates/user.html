@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1>Informació de l'usuari amb l'id: {{ user.id }}</h1>
+    <ul>
+        <li><strong>ID:</strong> {{ user.id }}</li>
+        <li><strong>Nom:</strong> {{ user.nom }}</li>
+        <li><strong>Cognom:</strong> {{ user.cognom }}</li>
+        <li><strong>Rol:</strong> {{ user.rol }}</li>
+        <li><strong>Assignatures:</strong> {{ user.assignatures }}</li>
+    </ul>
+    <br>
+    <button><a href="{% url 'principal' %}">Pàgina Principal</a></button>
+{% endblock %}
